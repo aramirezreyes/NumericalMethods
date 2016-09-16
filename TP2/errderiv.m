@@ -1,6 +1,7 @@
 function [ErU, ElU, EcU] = errderiv(u,uprime,J)
 [X,DrU,DlU,DcU] = derivatives(u,J);
-ErU = max(abs(DrU-uprime(X)));
-ElU = max(abs(DlU-uprime(X)));
-EcU = max(abs(DcU-uprime(X)));
+upraime = uprime(X);
+ErU = max(abs(DrU-upraime));
+ElU = max(abs(DlU-upraime));
+EcU = max(abs(DcU-upraime));
 end
