@@ -16,11 +16,13 @@ clear
 %% Ex 2
 f = @(x) (pi^2)*cos(pi*x);
 a = 1; b = -1;
-J = 1000;
-
+J = 10;
+u = @(x) cos(pi*x);
 [X,U] = PoissonDF(f,a,b,J);
-
-% plot(X,U)
-% hold on
-plot(X,cos(pi*X));
+x_cont = linspace(0,1,300);
+ plot(X,U)
+ hold on
+plot(x_cont,cos(pi*x_cont));
 legend('Model','Exact sol', 'Location','best')
+
+ploterrPoisson(f,a,b,u)
