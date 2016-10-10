@@ -1,5 +1,5 @@
 clear
-n = 10;
+n = 40;
 A = gallery('tridiag',n);B = zeros(n,1);
 B(1) = 1; B(n) = 1;
 epsi = 1e-10;
@@ -15,7 +15,7 @@ epsi = 1e-10;
 % [X,nbit] = SOR(A,B,1.2,epsi);
 % disp(num2str(nbit));
 
-interv = 1:0.01:1.99;
+interv = 1:0.01:2.2;
 iters = zeros(length(interv),1);
 ii = 1;
 for omega = interv
@@ -24,7 +24,7 @@ for omega = interv
 iters(ii) = nbit;
 ii= ii +1;
 end
-
+figure
 plot(interv,iters,'-*');
 
 [x,nbit] = jacobi(A,B,epsi);
